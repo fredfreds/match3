@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa9cdff2d7d3948a07740c29b35ce8, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  Cols: 5
-  Rows: 5
+  Cols: 6
+  Rows: 6
   jewelObjects:
   - jewelType: 0
     jewelPrefab: {fileID: 7513299701985886992, guid: dbec5ecd44c05584699d893fa597f95d,

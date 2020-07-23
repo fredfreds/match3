@@ -9,6 +9,6 @@ namespace Match3.ScriptableObjects
         public int Cols = 5;
         public int Rows = 5;
 
-        public JewelObject[] jewelObjects;
+        public JewelPrefab[] jewelObjects;
     }
 }
