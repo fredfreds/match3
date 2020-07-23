@@ -1,6 +1,6 @@
-﻿using Match3.Enums;
-using Match3.ScriptableObjects;
-using System.Collections;
+﻿using Match3.Core.Components;
+using Match3.Core.Enums;
+using Match3.Core.ScriptableObjects;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ namespace Match3.Core
 
         private JewelPrefab[] jewelObjects;
 
-        private GameObject[,] pieces;
+        private JewelComponent[,] pieces;
 
         private void Start()
         {
@@ -43,16 +43,18 @@ namespace Match3.Core
             int cols = gameSettings.Cols;
             int rows = gameSettings.Rows;
 
-            pieces = new GameObject[cols, rows];
+            pieces = new JewelComponent[cols, rows];
 
-            for (int i = 0; i < cols; i++)
+            for (int c = 0; c < cols; c++)
             {
-                for (int j = 0; j < rows; j++)
+                for (int r = 0; r < rows; r++)
                 {
-                    pieces[i, j] = Instantiate(jewelsDict[JewelType.STANDART], GetGridOffset(i, j), Quaternion.identity);
-                    Debug.Log(GetGridOffset(i, j));
-                    pieces[i, j].name = "Jewel (" + i + "/" + j + ")";
-                    pieces[i, j].transform.parent = transform;
+                    GameObject piece = Instantiate(jewelsDict[JewelType.STANDART], GetGridOffset(c, r), Quaternion.identity);
+                    piece.name = "Jewel (" + c + "/" + r + ")";
+                    piece.transform.parent = transform;
+
+                    pieces[c, r] = piece.GetComponent<JewelComponent>();
+                    pieces[c, r].Init(c, r, this, JewelType.STANDART);
                 }
             }
         }

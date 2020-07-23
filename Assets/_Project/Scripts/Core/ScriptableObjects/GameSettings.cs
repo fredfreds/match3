@@ -1,7 +1,6 @@
-﻿using Match3.Core;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Match3.ScriptableObjects
+namespace Match3.Core.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "GameSettings", menuName = "Game Settings")]
     public class GameSettings : ScriptableObject

@@ -1,4 +1,4 @@
-﻿using Match3.Enums;
+﻿using Match3.Core.Enums;
 using UnityEngine;
 
 namespace Match3.Core
